@@ -15,7 +15,7 @@ task({ :sample_data => :environment }) do
   usernames << "Alice"
   usernames << "Bob"
 
-  username.each do |username|
+  usernames.each do |username|
     User.create(
       email: "#{username}@example.com",
       password: "password",
