@@ -21,12 +21,20 @@
         <%= link_to "Following", following_path(@user.username), class: "nav-link" %>
       </li>
     </ul>
-    <h2>Own photos</h2>
+    <h2>Feed</h2>
   </div>
 </div>
 
 <ul>
-  <% @user.own_photos.each do |photo| %>
+  <%# feed_photos = [] %>
+  <%# @user.leaders.each do |following_user| %>
+    <%# following_user.own_photos.each do |photo| %>
+      <%# feed_photos.push(photo) %>
+    <%# end %>
+  <%# end %>
+
+  <% feed_photos = Photo.where(owner_id: @user.leaders).order(created_at: :asc) %>
+  <% feed_photos.each do |photo| %>
     <%= render "photos/photo", photo: photo %>
   <% end %>
 </ul>

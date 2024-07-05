@@ -21,12 +21,6 @@
         <%= link_to "Following", following_path(@user.username), class: "nav-link" %>
       </li>
     </ul>
-    <h2>Own photos</h2>
-  </div>
+    <h2>Following</h2>
+  </div> 
 </div>
-
-<ul>
-  <% @user.own_photos.each do |photo| %>
-    <%= render "photos/photo", photo: photo %>
-  <% end %>
-</ul>
