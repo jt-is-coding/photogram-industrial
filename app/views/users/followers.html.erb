@@ -22,5 +22,12 @@
       </li>
     </ul>
     <h2>Followers</h2>
+    <ul>
+      <% @user.followers.each do |follower| %>
+        <li>
+          <%= link_to "#{follower.username}", user_path(follower.username) %>
+        </li>
+      <% end %>
+    </ul>
   </div>
 </div>
